@@ -64,7 +64,7 @@ gem 'rolify'
 
 # Search
 gem 'ransack', git: 'https://github.com/activerecord-hackery/ransack',
-               branch: 'rails-4.2'
+              branch: 'rails-4.2'
 
 # Pagination
 gem 'kaminari-i18n'
