@@ -1,0 +1,23 @@
+%h1 Listing contests
+
+%table
+  %thead
+    %tr
+      %th Titulo
+      %th Descripcion
+      %th
+      %th
+      %th
+
+  %tbody
+    - @contests.each do |contest|
+      %tr
+        %td= contest.titulo
+        %td= contest.descripcion
+        %td= link_to 'Consultar', contest.document.url, target: '_blank'             
+        %td= link_to 'Editar', edit_contest_path(contest) 
+        %td= link_to 'Destroy', contest_path(contest), method: :delete, data: { confirm: 'Are you sure?' } 
+
+%br
+
+= link_to 'Crear Nuevo', new_contest_path

@@ -1,0 +1,19 @@
+= form_for @contest do |f|
+  - if @contest.errors.any?
+    #error_explanation
+      %h4= "#{pluralize(@contest.errors.count, "error")} No se pudo guardar el registro:"
+      %ul
+        - @contest.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :titulo
+    = f.text_field :titulo
+  .field
+    = f.label :descripcion
+    = f.text_area :descripcion
+  .field   
+    = f.file_field :document
+  .actions
+    = f.submit 'Save'
+
+= link_to 'Volver', contests_path
