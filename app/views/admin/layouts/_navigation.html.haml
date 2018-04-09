@@ -29,9 +29,9 @@
 					%li
 						= link_to t("keppler.actions.edit_profile"), main_app.edit_admin_user_path(current_user)
 					%li
-						%a.gray-text.text-lighten-3{:href => "/concurso"} Concurso
+						%a.gray-text.text-lighten-3{:href => "/crearconcurso"} Concurso
 					%li
-						%a.gray-text.text-lighten-3{:href => "/contrataciones"} Contrataciones	
+						%a.gray-text.text-lighten-3{:href => "/crearcontratacion"} Contrataciones	
 					%li.divider
 					%li
 						= link_to t("keppler.actions.sign_out"), main_app.destroy_user_session_path
