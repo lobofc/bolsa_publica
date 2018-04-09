@@ -47,12 +47,12 @@
               %a{:href => "/contacto"} Contacto
     .container.titlelist
       .row
-        %h4 Concurso Público para Ingreso de Personal
-        - @contests.each do |contest|    
+        %h4 Contrataciones Públicas
+        - @contracts.each do |contract|    
           .col.s12.m10.offset-m1.grey.lighten-2.formtop3      
-            %h5.red-text.text-darken-4= contest.titulo
-            %p= contest.descripcion
-            .waves-effect.waves-light.btn.red.darken-4.linkw.lang= link_to 'Consultar', contest.document.url, target: '_blank'    
+            %h5.red-text.text-darken-4= contract.titulo
+            %p= contract.descripcion
+            .waves-effect.waves-light.btn.red.darken-4.linkw.lang= link_to 'Consultar', contract.document.url, target: '_blank'    
     %footer.page-footer
       .container
         .row

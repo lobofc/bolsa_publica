@@ -4,12 +4,12 @@
       .card-panel
         .row
           .col.s12
-          = form_for @contest do |f|
-            - if @contest.errors.any?
+          = form_for @contract do |f|
+            - if @contract.errors.any?
               #error_explanation
-                %h5= "#{pluralize(@contest.errors.count, "errores")} no se pudo guardar el registro"
+                %h5= "#{pluralize(@contract.errors.count, "errores")} no se pudo guardar el registro"
                 %ul
-                  - @contest.errors.full_messages.each do |message|
+                  - @contract.errors.full_messages.each do |message|
                     %li= message
             .row
               .field.col.s12
@@ -28,7 +28,7 @@
               .col.s12.m5.offset-m1.left-align              
                 .waves-effect.waves-light.btn= f.submit 'Guardar'
               .col.s12.m5.offset-m1.center-align  
-                .waves-effect.waves-light.btn.linkw= link_to 'Volver', contests_path
+                .waves-effect.waves-light.btn.linkw= link_to 'Volver', contracts_path
     
 
 %script{:src => "js/jquery-3.2.1.min.js", :type => "text/javascript"}
@@ -36,5 +36,9 @@
 :javascript
   $('#textarea1').val('');
   $('#textarea1').trigger('autoresize');
+
+
+
+
 
 
