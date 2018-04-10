@@ -21,8 +21,7 @@ Rails.application.routes.draw do
    get '/crearconcurso', to: 'contests#index'
    get '/contrataciones', to: 'contracts#contrataciones'
    get '/crearcontratacion', to: 'contracts#index'
-   get '/new', to: 'contests#new'
-   get '/contrataciones', to: 'app/front#contrataciones', as: :app_contrataciones
+   get '/new', to: 'contests#new'   
    get '/mercadosecundario', to: 'app/front#mercadosecundario', as: :app_mercadosecundario
    get '/custodia', to: 'app/front#custodia', as: :app_custodia
    get '/estadisticas', to: 'app/front#estadisticas', as: :app_estadisticas
