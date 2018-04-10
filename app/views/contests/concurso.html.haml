@@ -45,9 +45,9 @@
               %a{:href => "/estadisticas"} Estadísticas
             %li
               %a{:href => "/contacto"} Contacto
-    .container.titlelist
+    .container.titlelist.anidada
       .row
-        %h4 Concurso Público para Ingreso de Personal
+        %h5 Concurso Público para Ingreso de Personal
         - @contests.each do |contest|    
           .col.s12.m10.offset-m1.grey.lighten-2.formtop3      
             %h5.red-text.text-darken-4= contest.titulo
