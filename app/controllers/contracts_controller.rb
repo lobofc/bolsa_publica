@@ -1,6 +1,6 @@
 class ContractsController < ApplicationController
  before_action :set_contract, only: [:show, :edit, :update, :destroy]
- before_action :set_setting, only: [:index, :show, :edit, :update, :destroy, :new, :concurso]
+ before_action :set_setting, only: [:index, :show, :edit, :update, :destroy, :new, :contrataciones]
   # GET /contracts
   # GET /contracts.json
   def index
