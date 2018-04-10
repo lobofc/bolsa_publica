@@ -1,12 +1,12 @@
 !!!
 %html
   %head
+    = render 'app/layouts/head'
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Bolsa Pública
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width, user-scalable=no, initial-scalable=1.0, maximum-scale=1.0, minimum-scale=1.0", :name => "viewport"}/    
-    %link{:href => "assets/css/calculadora.css", :rel => "stylesheet", :type => "text/css"}/
+    %meta{:charset => "utf-8"}/    
     %link{:href => "assets/css/estilos.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "assets/css/calculadora.css", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
     %link{:href => "assets/css/fonts.css", :rel => "stylesheet"}/
   %body
@@ -51,7 +51,7 @@
         .cuadro.col.s12.m8.offset-m2.red.darken-1.white-text
           %p Bienvenido a la aplicación Calculadora Financiera de la Bolsa Pública de Valores Bicentenaria, a través de ella podrá conocer datos importantes para tomar la mejor decisión al momento de invertir, solo debe ingresar los datos que se le solicitan y en segundos conocerá el rendimiento aproximado y el monto a pagar por su inversión.
         .botonPrincipal.col.s12.center-align
-          %a.waves-effect.waves-light.btn-large.red.darken-4{:href => "/aplicacion"} Continuar
+          %a.waves-effect.waves-light.btn-large.red.darken-4{:href => "/aplicacion"} Continuar           
     %footer.page-footer
       .container
         .row
@@ -112,7 +112,3 @@
       $(document).ready(function(){
           $('.slider').slider();
         });
-
-      $(document).ready(function(){
-        $('.modal').modal();
-      });
