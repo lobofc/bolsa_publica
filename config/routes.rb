@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
-  resources :contracts
-
-  resources :contests
-
    get '/cssslider', to: 'app/front#cssslider', as: :app_cssslider
    get '/atencion', to: 'app/front#atencion', as: :app_atencion
    get '/colocacioninstrumentos', to: 'app/front#colocacioninstrumentos', as: :app_colocacioninstrumentos
    get '/index', to: 'app/front#index', as: :app_index
+   get '/charts', to: 'app/front#charts', as: :app_charts
    get '/estructuracion', to: 'app/front#estructuracion', as: :app_estructuracion
    get '/quienessomos', to: 'app/front#quienessomos', as: :app_quienessomos
    get '/juridica', to: 'app/front#juridica', as: :app_juridica
@@ -17,11 +14,6 @@ Rails.application.routes.draw do
    get '/tarifas', to: 'app/front#tarifas', as: :app_tarifas
    get '/persona', to: 'app/front#persona', as: :app_persona
    get '/marcolegal', to: 'app/front#marcolegal', as: :app_marcolegal
-   get '/concurso', to: 'contests#concurso'
-   get '/crearconcurso', to: 'contests#index'
-   get '/contrataciones', to: 'contracts#contrataciones'
-   get '/crearcontratacion', to: 'contracts#index'
-   get '/new', to: 'contests#new'   
    get '/mercadosecundario', to: 'app/front#mercadosecundario', as: :app_mercadosecundario
    get '/custodia', to: 'app/front#custodia', as: :app_custodia
    get '/estadisticas', to: 'app/front#estadisticas', as: :app_estadisticas
@@ -34,6 +26,16 @@ Rails.application.routes.draw do
   devise_for :users, skip: KepplerConfiguration.skip_module_devise
 
   namespace :admin do
+    resources :calculators do
+      get '(page/:page)', action: :index, on: :collection, as: ''
+      get '/clone', action: 'clone'
+      delete(
+        action: :destroy_multiple,
+        on: :collection,
+        as: :destroy_multiple
+      )
+    end
+
     resources :charts do
       get '(page/:page)', action: :index, on: :collection, as: ''
       get '/clone', action: 'clone'

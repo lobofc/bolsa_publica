@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
   end
 
   def appearance
-    @appearance = Setting.first&.appearance
+    @appearance = Setting.first.appearance
   end
 
   def set_apparience_colors
@@ -75,12 +75,8 @@ class ApplicationController < ActionController::Base
     RUBY_VERSION < "2.2.0" ? devise_old : devise_new
   end
 
-  def layout_by_resource    
-    if devise_controller?
-      'admin/layouts/application'
-    else  
-      'application'
-    end  
+  def layout_by_resource
+    'admin/layouts/application' if devise_controller?
   end
 
   def devise_new
